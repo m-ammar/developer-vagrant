@@ -7,8 +7,8 @@ Vagrant.configure("2") do |config|
     #v.cpus = 4
     v.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
   end
-  config.vm.synced_folder "./..", "/home/vagrant/workspace"
-  config.vm.synced_folder "./scripts", "/home/vagrant/scripts"
+  config.vm.synced_folder "./..", "/home/workspace_personal/devops_bootcamp"
+  config.vm.synced_folder "./scripts", "/home/workspace_personal/devops_bootcamp/developer-vagrant/scripts"
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.network "forwarded_port", guest: 8200, host: 8200
   config.vm.provision "ansible_local" do |ansible|
